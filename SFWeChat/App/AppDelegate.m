@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#define kAVAppID  @"keEOt672KvELCFPkcxiohdIX-gzGzoHsz"
+#define kAVAppKey @"Fdjc7CmCVAvtoFfx9lixMTVv"
+
 @interface AppDelegate ()
 
 @end
@@ -16,7 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+    
     return YES;
 }
 
