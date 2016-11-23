@@ -10,4 +10,10 @@
 
 @interface SFNavigationController : UINavigationController
 
+// instance for tab bar controller
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+                                     title:(NSString *)title
+                                     image:(NSString *)imageName
+                             selectedImage:(NSString *)selectedImageName;
+
 @end

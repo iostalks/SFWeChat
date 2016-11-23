@@ -7,6 +7,7 @@
 //
 
 #import "SFNavigationController.h"
+#import "UIColor+SFTheme.h"
 
 @interface SFNavigationController ()
 
@@ -14,24 +15,29 @@
 
 @implementation SFNavigationController
 
+- (instancetype)initWithRootViewController:(UIViewController *)rootViewController
+                                     title:(NSString *)title
+                                     image:(NSString *)imageName
+                             selectedImage:(NSString *)selectedImageName {
+    
+    UIImage *image = [[UIImage imageNamed:imageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UIImage *selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    UITabBarItem *tabBarItem = [[UITabBarItem alloc] initWithTitle:title image:image selectedImage:selectedImage];
+    rootViewController.tabBarItem = tabBarItem;
+    
+    SFNavigationController *navigationConroller = [super initWithRootViewController:rootViewController];
+    navigationConroller.navigationBar.barTintColor = [UIColor barTintColor];
+    navigationConroller.navigationBar.tintColor = [UIColor whiteColor];
+    navigationConroller.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    return navigationConroller;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return self.topViewController;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

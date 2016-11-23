@@ -13,7 +13,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRD-CB-wdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Chats" id="vA8-1E-TKT" userLabel="Chats" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chats" id="MoY-Lc-87A"/>
+                    <tabBarItem key="tabBarItem" title="Chats" image="tabbar_mainframe" selectedImage="tabbar_mainframeHL" id="MoY-Lc-87A"/>
                 </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="-30" y="-299"/>
@@ -23,7 +23,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yir-vb-aeo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Contacts" storyboardName="Contacts" id="eL7-4p-Nxe" userLabel="Contacts" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Contacts" id="lTR-g4-mIA"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="tabbar_contacts" selectedImage="tabbar_contactsHL" id="lTR-g4-mIA"/>
                 </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="-23" y="-246"/>
@@ -33,7 +33,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OaM-ql-E16" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Discover" storyboardName="Discover" id="bcJ-lf-fpq" userLabel="Discover" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" id="RrP-Eg-zA5"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="tabbar_discover" selectedImage="tabbar_discoverHL" id="RrP-Eg-zA5"/>
                 </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="-23" y="-193"/>
@@ -43,7 +43,7 @@
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJg-ar-dAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="Me" storyboardName="Me" id="Mk1-P6-Dtd" userLabel="Me" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="Z2u-tg-eag"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="tabbar_me" selectedImage="tabbar_meHL" id="Z2u-tg-eag"/>
                 </viewControllerPlaceholder>
             </objects>
             <point key="canvasLocation" x="-39" y="-138"/>
@@ -69,4 +69,14 @@
             <point key="canvasLocation" x="-575" y="-218"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tabbar_contacts" width="27" height="23"/>
+        <image name="tabbar_contactsHL" width="27" height="23"/>
+        <image name="tabbar_discover" width="23" height="23"/>
+        <image name="tabbar_discoverHL" width="23" height="23"/>
+        <image name="tabbar_mainframe" width="25" height="23"/>
+        <image name="tabbar_mainframeHL" width="25" height="23"/>
+        <image name="tabbar_me" width="23" height="23"/>
+        <image name="tabbar_meHL" width="23" height="23"/>
+    </resources>
 </document>

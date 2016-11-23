@@ -9,5 +9,9 @@
 #import "SFMeViewController.h"
 
 @implementation SFMeViewController
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.title = @"Me";
+}
 
 @end

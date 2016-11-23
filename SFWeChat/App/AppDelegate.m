@@ -7,6 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "SFTabBarViewController.h"
+
+#import <AVOSCloud/AVOSCloud.h>
+#import <sys/sysctl.h>
+
+
+
+static NSTimeInterval kNetworkingTimeoutInterval = 30;
 
 #define kAVAppID  @"keEOt672KvELCFPkcxiohdIX-gzGzoHsz"
 #define kAVAppKey @"Fdjc7CmCVAvtoFfx9lixMTVv"
@@ -19,9 +27,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    NSUInteger activeProc = [NSProcessInfo processInfo].activeProcessorCount;;
+    NSUInteger proc = [[NSProcessInfo processInfo] processorCount];
+    NSUInteger memory = [[NSProcessInfo processInfo] physicalMemory];
+    NSLog(@"%lu, %lu, %lu", (unsigned long)activeProc, (unsigned long)proc, (unsigned long)memory);
     
     
+    [AVOSCloud setApplicationId:kAVAppID clientKey:kAVAppKey];
+    [AVOSCloud setNetworkTimeoutInterval:kNetworkingTimeoutInterval];
     
+    [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor lightGrayColor];
+    SFTabBarViewController *tabBarViewController = [[SFTabBarViewController alloc] init];
+    self.window.rootViewController = tabBarViewController;
+    [self.window makeKeyAndVisible];
+                   
     return YES;
 }
 

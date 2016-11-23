@@ -7,6 +7,14 @@
 //
 
 #import "SFTabBarViewController.h"
+#import "SFNavigationController.h"
+
+#import "SFChatsViewController.h"
+#import "SFContactsViewController.h"
+#import "SFDiscoverViewController.h"
+#import "SFMeViewController.h"
+
+#import "UIColor+SFTheme.h"
 
 @interface SFTabBarViewController ()
 
@@ -16,22 +24,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    SFChatsViewController *chatsViewController = [SFChatsViewController new];
+    SFNavigationController *chatsNav = [[SFNavigationController alloc] initWithRootViewController:chatsViewController
+                                                                                            title:@"Chats"
+                                                                                            image:@"tabbar_mainframe" selectedImage:@"tabbar_mainframeHL"];
+    
+    SFContactsViewController *contactsViewController = [SFContactsViewController new];
+    SFNavigationController *contactsNav = [[SFNavigationController alloc] initWithRootViewController:contactsViewController
+                                                                                               title:@"Contacts"
+                                                                                               image:@"tabbar_contacts" selectedImage:@"tabbar_contactsHL"];
+    
+    SFDiscoverViewController *discoverViewController = [SFDiscoverViewController new];
+    SFNavigationController *discoverNav = [[SFNavigationController alloc] initWithRootViewController:discoverViewController
+                                                                                               title:@"Discover"
+                                                                                               image:@"tabbar_discover" selectedImage:@"tabbar_discoverHL"];
+    
+    SFMeViewController *meViewController = [SFMeViewController new];
+    SFNavigationController *meNav = [[SFNavigationController alloc] initWithRootViewController:meViewController
+                                                                                               title:@"Me"
+                                                                                               image:@"tabbar_me" selectedImage:@"tabbar_meHL"];
+    self.tabBar.tintColor = [UIColor themeColor];
+    self.viewControllers = @[chatsNav, contactsNav, discoverNav, meNav];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

@@ -9,5 +9,9 @@
 #import "SFContactsViewController.h"
 
 @implementation SFContactsViewController
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.title = @"Contacts";
+}
 
 @end

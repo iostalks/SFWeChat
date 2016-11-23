@@ -9,5 +9,9 @@
 #import "SFChatsViewController.h"
 
 @implementation SFChatsViewController
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.title = @"WeChat";
+}
 
 @end
